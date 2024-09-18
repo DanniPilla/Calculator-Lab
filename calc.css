@@ -1,0 +1,15 @@
+
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color:#adbfe5;
+}
+
+#result {
+    font-weight: bold;
+    font-size: 24px;
+    
+}
