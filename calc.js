@@ -1,28 +1,40 @@
-
-document.getElementById("equals").addEventListener("click", function () {
+// Get the values from the dropdowns
+function getValues() {
   const num1 = parseInt(document.getElementById("1number").value);
   const operator = document.getElementById("operator").value;
   const num2 = parseInt(document.getElementById("2number").value);
+  return { num1, operator, num2 };
+}
 
+// Display Result
+function displayResult(result) {
+  document.getElementById("result").innerText = result;
+}
+
+// Addition
+function additionFunction(a, b) {
+  return a + b;
+}
+
+// Subtraction
+function minusFunction(a, b) {
+  return a - b;
+}
+
+// Division
+function divideFunction(a, b) {
+  return a / b;
+}
+
+// Multiplication
+function multiplyFunction(a, b) {
+  return a * b;
+}
+
+// Perform the calculation
+function calculate() {
+  const { num1, operator, num2 } = getValues();
   let result;
-  function additionFunction(a, b) {
-    return a + b;
-  }
-
-  //subtraction
-  function minusFunction(a, b) {
-    return a - b;
-  }
-
-  //division
-  function divideFunction(a, b) {
-    return a / b;
-  }
-
-  //multiply
-  function multiplyFunction(a, b) {
-    return a * b;
-  }
 
   switch (operator) {
     case "+":
@@ -38,12 +50,14 @@ document.getElementById("equals").addEventListener("click", function () {
       result = divideFunction(num1, num2);
       break;
   }
-  //display result
-  document.getElementById("result").innerText = result;
-});
 
-//Clear button
+  displayResult(result);
+}
+
+// Equals button
+document.getElementById("equals").addEventListener("click", calculate);
+
+// Clear button
 document.getElementById("clearButton").addEventListener("click", function () {
-  document.getElementById("result").innerText = 0;
+  displayResult(0);
 });
-
