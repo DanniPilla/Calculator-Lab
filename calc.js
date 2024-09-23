@@ -1,3 +1,12 @@
+const statusImage = document.getElementById("status-image");
+
+const waitingImage = "yes-please-sir-waiting.gif";
+const resultImage = "Hello Cute Sticker - Hello Cute - Discover & Share GIFs.gif";
+
+const commentary = document.getElementById("comentary");
+const waitingMessage = "What should we do?";
+const resultMessage = "Nice one!";
+
 // Get the values from the dropdowns
 function getValues() {
   const num1 = parseInt(document.getElementById("1number").value);
@@ -52,6 +61,8 @@ function calculate() {
   }
 
   displayResult(result);
+  statusImage.src = resultImage;
+  commentary.innerText = resultMessage;
 }
 
 // Equals button
@@ -60,4 +71,11 @@ document.getElementById("equals").addEventListener("click", calculate);
 // Clear button
 document.getElementById("clearButton").addEventListener("click", function () {
   displayResult(0);
+  statusImage.src = waitingImage;
+  commentary.innerText = waitingMessage;
 });
+
+
+
+
+
